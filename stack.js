@@ -45,8 +45,8 @@ let stack = function(){
         if(this.count === 0){
             return undefined;
         }
-        else{
-            this.count--
+        else{ 
+            this.count--; // first decrement the counter.
             let result = this.store[this.count];
             delete this.store[this.count];
             return result;
