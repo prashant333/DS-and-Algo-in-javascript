@@ -11,11 +11,11 @@ for (let i = 0; i < word.length; i++) {
     stackLetter.push(word[i])
 }
 
-// pop of each letter from stack one after the another
+// pop of each letter from stack one after the another.
 for (let i = 0; i < word.length; i++) {
     rword +=   stackLetter.pop();
 }
-
+// check if the word and reverse of the word matches.
 if(word == rword){
     console.log(`${word} is palindrome`)
 }
