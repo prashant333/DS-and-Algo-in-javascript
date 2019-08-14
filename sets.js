@@ -55,7 +55,7 @@ function mySet() {
     // this method returns intersection of two set
     this.intersection = function(otherSet) {
         let intersectionSet = new mySet();
-        let firstSet = this.values();
+        let firstSet = this.value();
         firstSet.forEach(function(e){
             if(otherSet.has(e)){
                 intersectionSet.add(e);
@@ -63,18 +63,35 @@ function mySet() {
         });
         return intersectionSet;
     };
+
+    // this method returns the difference of two set
+    this.difference = function(otherSet) {
+        let differenceSet = new mySet();
+        let firstSet = this.value();
+        firstSet.forEach(function(e){
+            if(!otherSet.has(e)){
+                differenceSet.add(e);
+            }
+        });
+        return differenceSet;
+    };
+    // this method checks if the set is a subset of a different set 
+    this.subset = function(otherSet){
+        let firstSet = this.value();
+        return firstSet.every(function(value){
+            return otherSet.has(value);
+        });
+    };
 }
 
-let setVar = new mySet();
-let setVar1 = new mySet();
+let setVar = new mySet();  
+let setVar1 = new mySet();  
+setVar.add("a");  
+setVar1.add("b");  
+setVar1.add("c");  
+setVar1.add("a");  
+setVar1.add("d");  
+console.log(setVar.subset(setVar1));
+console.log(setVar.intersection(setVar1).value());
+console.log(setVar1.difference(setVar).value());
 
-setVar1.add('are');
-setVar1.add('you');
-setVar.add('hello');
-setVar.add('how');
-console.log(setVar.union(setVar1))
-console.log(setVar.has('hello'))
-setVar.remove('hello')
-console.log(setVar.has('hello'))
-console.log(setVar.value());
-console.log(setVar.add('how'));
