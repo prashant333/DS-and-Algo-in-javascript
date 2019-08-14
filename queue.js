@@ -29,4 +29,6 @@ function Queue(){
 }
  let queueOne = new Queue();
  queueOne.enqueue('hello');
+ queueOne.enqueue('world');
+ queueOne.dequeue();
  queueOne.print()
