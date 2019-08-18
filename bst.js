@@ -59,10 +59,27 @@ class BST{
     // finding the maximum value in BST
 
     findMax(){
-        let curretn = this.root;
+        let current = this.root;
         while (current.right) {
             curretn = current.right;
         }
         return current.data;
+    }
+
+    // finding a value in BST
+
+    find(data){
+        let current = this.root;
+        while (current.data !==data) {
+            if (data< current.data) {
+                current = curretn.left;
+            } else {
+                current = current.right;
+            }
+            if (current === null) {
+                return null;
+            }
+        }
+        return current;
     }
 }
