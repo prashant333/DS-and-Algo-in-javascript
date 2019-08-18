@@ -46,4 +46,23 @@ class BST{
             return searchTree(node);
         }
     }
+
+    // finding the minimum value in BST
+    findMin(){
+        let current = this.root;
+        while (current.left !==null) {
+            current = current.left;
+        }
+        return current.data;
+    }
+
+    // finding the maximum value in BST
+
+    findMax(){
+        let curretn = this.root;
+        while (current.right) {
+            curretn = current.right;
+        }
+        return current.data;
+    }
 }
